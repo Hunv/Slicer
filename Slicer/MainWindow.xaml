@@ -1,0 +1,125 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Slicer" x:Class="Slicer.MainWindow"
+        Title="MainWindow" Height="600" Width="713"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        >
+    <Grid>
+
+        <TabControl>
+            <TabItem Header="Edit Image">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="550"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top"
+                        Width="532" 
+                        Height="532" 
+                        BorderThickness="10" 
+                        BorderBrush="Green"
+                        Grid.Column="0"
+                        >
+                        <Image 
+                            Source="{Binding DrawImage, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                            RenderOptions.BitmapScalingMode="NearestNeighbor"
+                            RenderOptions.EdgeMode="Aliased"
+                            Stretch="Uniform"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left"
+                            SnapsToDevicePixels="True"
+                            Grid.Row="0"
+                            MouseLeftButtonDown="Image_MouseLeftButtonDown"
+                            MouseLeftButtonUp="Image_MouseLeftButtonUp"
+                            MouseMove="Image_MouseMove"
+                            MouseLeave="Image_MouseLeave"
+                            Name="imgImageEditor"
+                            />
+                    </Border>
+                    
+                    <Grid
+                        Grid.Column="1"
+                        >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="128"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <GroupBox Header="Drawing Color">
+                                <StackPanel Margin="2">
+                                    <RadioButton Content="Black" IsChecked="{Binding IsBlack, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <RadioButton Content="Dark Gray" IsChecked="{Binding IsDarkGray, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <RadioButton Content="Light Gray" IsChecked="{Binding IsLightGray, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <RadioButton Content="White" IsChecked="{Binding IsWhite, UpdateSourceTrigger=PropertyChanged}"/>
+                                </StackPanel>
+                            </GroupBox>
+                            <Button 
+                                Content=" Import..." 
+                                HorizontalContentAlignment="Left" 
+                                Margin="1"
+                                Name="btnImport"
+                                Click="btnImport_Click"
+                                />
+                            <Button 
+                                Content=" Save..." 
+                                HorizontalContentAlignment="Left" 
+                                Margin="1"
+                                Name="btnSave"
+                                Click="btnSave_Click"
+                                />
+                            <Button 
+                                Content=" Clear" 
+                                HorizontalContentAlignment="Left" 
+                                Margin="1"
+                                Name="btnClear"
+                                Click="btnClear_Click"
+                                />
+                            <CheckBox
+                                Content="Enable Grid"
+                                />
+                        </StackPanel>
+                        <Image 
+                            Grid.Row="1"
+                            x:Name="imgGraphicView" 
+                            Source="{Binding PreviewImage, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                            Stretch="Uniform"
+                            />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Shape Creator">
+                <Grid>
+                    <local:ImageCreator />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Shape Analyzer (Dev only)">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="128"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox 
+                        Grid.Column="0"
+                        Text="{Binding CutTranslation, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" FontFamily="Courier New"
+                        ScrollViewer.VerticalScrollBarVisibility="Visible"
+                        />
+                    <StackPanel
+                        Grid.Column="1"
+                        >
+                        <Button
+                            Content="Load Cut"
+                            Name="btnLoadCut"
+                            Click="btnLoadCut_Click"
+                            />
+                        <TextBlock
+                            Text="{Binding CutStatistics, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                            />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
