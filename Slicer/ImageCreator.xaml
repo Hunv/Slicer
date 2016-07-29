@@ -9833,6 +9833,14 @@
                 <!-- Rectangle to mark usable Area -->
                 <Rectangle Width="1020" Height="1020" Stroke="Red" StrokeThickness="2"/>
 
+                <!-- Cutter Path -->
+                <Polyline 
+                    Name="plCutterPath"
+                    Points="{Binding CutterVisualizerPath, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    Stroke="Green"
+                    StrokeThickness="3"
+                    />
+
                 <!-- Cutter Emulator -->
                 <Ellipse 
                     Stroke="Red" 
@@ -9873,8 +9881,19 @@
                 Content="Load Backgroundimage"
                 Name="btnLoadBackgroundImage"
                 Click="btnLoadBackgroundImage_Click"
+                />
+            <Button
+                Content="Import High Resolution SVG"
+                Name="btnLoadSVG"
+                Click="btnLoadSVG_Click"
                 Margin="0,10,0,0"
                 />
+
+            <Label Content="OffsetX"/>
+            <TextBox Text="{Binding OffsetX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="OffsetY"/>
+            <TextBox Text="{Binding OffsetY, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
             <Button 
                 Content="Generate CutterCode"
                 Name="btnGenCutterCode"

@@ -471,67 +471,89 @@ namespace Slicer
                 case 0x30:
                     return "Knife down";
                 case 0x40:
-                    return "Turn 25,5°";
+                    return "Rotor CW 0°-25,5°";
                 case 0x41:
-                    return "Turn 51°";
+                    return "Rotor CW 25°-51°";
                 case 0x42:
-                    return "Turn 76,5°";
+                    return "Rotor CW 51°-76,5°";
                 case 0x43:
-                    return "Turn 102°";
+                    return "Rotor CW 76,5°-102°";
                 case 0x44:
-                    return "Turn 127,5°";
+                    return "Rotor CW 102°-127,5°";
                 case 0x45:
-                    return "Turn 153°";
+                    return "Rotor CW 127,5°-153°";
                 case 0x46:
-                    return "Turn 188,5°";
+                    return "Rotor CW 153°-188,5°";
                 case 0x47:
-                    return "Turn 209°";
+                    return "Rotor CW 188,5°-209°";
                 case 0x48:
-                    return "Turn 234,5°";
+                    return "Rotor CW 209°-234,5°";
                 case 0x49:
-                    return "Turn 255°";
+                    return "Rotor CW 234,5°-255°";
                 case 0x4A:
-                    return "Turn 280,5°";
+                    return "Rotor CW 255°-280,5°";
                 case 0x4B:
-                    return "Turn 306°";
+                    return "Rotor CW 280,5°-306°";
                 case 0x4C:
-                    return "Turn 331,5°";                    
+                    return "Rotor CW 306°-331,5°";                    
                 case 0x4D:
-                    return "Turn 357°";
+                    return "Rotor CW 331,5°-357°";
                 case 0x4E:
-                    return "Turn 382,5°";
+                    return "Rotor CW 357°-382,5°";
                 case 0x4F:
-                    return "Turn 408°";
+                    return "Rotor CW 382,5°-408°";
                 case 0x50:
-                    return "Knife inner";
+                    return "Slide 1'";
                 case 0x51:
-                    return "Knife middle";
+                    return "Slide 2'";
                 case 0x52:
-                    return "Knife outer";
+                    return "Slide 3'";
                 case 0x60:
-                    return "Turn 25,5° CW";
+                    return "Turn CW";
                 case 0x61:
-                    return "Turn 25,5° CCW";
-                case 0x62:
-                    return "Turn 25,5° CW (unused?)";
+                    return "Turn CCW";
                 case 0x70:
-                    return "Knife inner";
+                    return "Slide move in";
                 case 0x71:
-                    return "Knife middle";                    
-                case 0x72:
-                    return "Knife (unused?)-------";
+                    return "Slide move out";
                 case 0x80:
-                    return "Turn 25,5° CW";
+                    return "Rotor CCW 0°-25,5°";
                 case 0x81:
-                    return "Turn 51° CW";
+                    return "Rotor CCW 25°-51°";
                 case 0x82:
-                    return "Turn 76,5° CW";
+                    return "Rotor CCW 51°-76,5°";
+                case 0x83:
+                    return "Rotor CCW 76,5°-102°";
+                case 0x84:
+                    return "Rotor CCW 102°-127,5°";
+                case 0x85:
+                    return "Rotor CCW 127,5°-153°";
+                case 0x86:
+                    return "Rotor CCW 153°-188,5°";
+                case 0x87:
+                    return "Rotor CCW 188,5°-209°";
+                case 0x88:
+                    return "Rotor CCW 209°-234,5°";
+                case 0x89:
+                    return "Rotor CCW 234,5°-255°";
+                case 0x8A:
+                    return "Rotor CCW 255°-280,5°";
+                case 0x8B:
+                    return "Rotor CCW 280,5°-306°";
+                case 0x8C:
+                    return "Rotor CCW 306°-331,5°";
+                case 0x8D:
+                    return "Rotor CCW 331,5°-357°";
+                case 0x8E:
+                    return "Rotor CCW 357°-382,5°";
+                case 0x8F:
+                    return "Rotor CCW 382,5°-408°";
                 case 0x90:
-                    return "Knife inner + Wait start";
+                    return "Knife 1' + Wait start";
                 case 0x91:
-                    return "Knife middle + Wait start";
+                    return "Knife 2' + Wait start";
                 case 0x92:
-                    return "Knife outer + Wait start";
+                    return "Knife 3' + Wait start";
                 case 0xF0:
                     return "File End";
             }
