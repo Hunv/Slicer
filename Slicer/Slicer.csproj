@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,7 +56,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ImageCreator.xaml.cs">
+      <DependentUpon>ImageCreator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageHelper.cs" />
+    <Compile Include="ShapeDirectory.cs" />
     <Page Include="ImageCreator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShapeCreator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,8 +79,8 @@
     </Compile>
     <Compile Include="CutterCode.cs" />
     <Compile Include="CutterPathItem.cs" />
-    <Compile Include="ImageCreator.xaml.cs">
-      <DependentUpon>ImageCreator.xaml</DependentUpon>
+    <Compile Include="ShapeCreator.xaml.cs">
+      <DependentUpon>ShapeCreator.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
