@@ -18,72 +18,294 @@
             Width="532" 
             Height="532" 
             BorderThickness="10" 
-            BorderBrush="Green"
+            BorderBrush="Green"            
             Grid.Column="0"
             >
-            <Image 
-                Source="{Binding DrawImage, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                RenderOptions.BitmapScalingMode="NearestNeighbor"
-                RenderOptions.EdgeMode="Aliased"
-                Stretch="Uniform"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                SnapsToDevicePixels="True"
-                Grid.Row="0"
-                MouseLeftButtonDown="Image_MouseLeftButtonDown"
-                MouseLeftButtonUp="Image_MouseLeftButtonUp"
-                MouseMove="Image_MouseMove"
-                MouseLeave="Image_MouseLeave"
-                Name="imgImageEditor"
-                />
+            <Grid Background="Green">
+                <Image 
+                    Source="{Binding DrawImage, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    RenderOptions.BitmapScalingMode="NearestNeighbor"
+                    RenderOptions.EdgeMode="Aliased"
+                    Stretch="Uniform"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    SnapsToDevicePixels="True"
+                    Grid.Row="0"
+                    MouseLeftButtonDown="Image_MouseLeftButtonDown"
+                    MouseLeftButtonUp="Image_MouseLeftButtonUp"
+                    MouseMove="Image_MouseMove"
+                    MouseLeave="Image_MouseLeave"
+                    Name="imgImageEditor"
+                    />
+                <Line X1="4" X2="4" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="8" X2="8" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="12" X2="12" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="16" X2="16" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="20" X2="20" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="24" X2="24" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="28" X2="28" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="32" X2="32" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="36" X2="36" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="40" X2="40" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="44" X2="44" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="48" X2="48" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="52" X2="52" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="56" X2="56" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="60" X2="60" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="64" X2="64" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="68" X2="68" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="72" X2="72" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="76" X2="76" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="80" X2="80" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="84" X2="84" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="88" X2="88" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="92" X2="92" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="96" X2="96" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="100" X2="100" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="104" X2="104" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="108" X2="108" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="112" X2="112" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="116" X2="116" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="120" X2="120" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="124" X2="124" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="128" X2="128" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="132" X2="132" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="136" X2="136" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="140" X2="140" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="144" X2="144" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="148" X2="148" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="152" X2="152" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="156" X2="156" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="160" X2="160" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="164" X2="164" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="168" X2="168" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="172" X2="172" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="176" X2="176" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="180" X2="180" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="184" X2="184" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="188" X2="188" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="192" X2="192" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="196" X2="196" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="200" X2="200" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="204" X2="204" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="208" X2="208" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="212" X2="212" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="216" X2="216" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="220" X2="220" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="224" X2="224" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="228" X2="228" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="232" X2="232" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="236" X2="236" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="240" X2="240" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="244" X2="244" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="248" X2="248" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="252" X2="252" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="256" X2="256" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="260" X2="260" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="264" X2="264" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="268" X2="268" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="272" X2="272" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="276" X2="276" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="280" X2="280" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="284" X2="284" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="288" X2="288" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="292" X2="292" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="296" X2="296" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="300" X2="300" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="304" X2="304" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="308" X2="308" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="312" X2="312" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="316" X2="316" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="320" X2="320" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="324" X2="324" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="328" X2="328" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="332" X2="332" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="336" X2="336" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="340" X2="340" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="344" X2="344" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="348" X2="348" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="352" X2="352" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="356" X2="356" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="360" X2="360" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="364" X2="364" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="368" X2="368" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="372" X2="372" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="376" X2="376" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="380" X2="380" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="384" X2="384" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="388" X2="388" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="392" X2="392" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="396" X2="396" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="400" X2="400" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="404" X2="404" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="408" X2="408" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="412" X2="412" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="416" X2="416" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="420" X2="420" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="424" X2="424" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="428" X2="428" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="432" X2="432" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="436" X2="436" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="440" X2="440" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="444" X2="444" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="448" X2="448" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="452" X2="452" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="456" X2="456" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="460" X2="460" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="464" X2="464" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="468" X2="468" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="472" X2="472" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="476" X2="476" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="480" X2="480" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="484" X2="484" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="488" X2="488" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="492" X2="492" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="496" X2="496" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="500" X2="500" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="504" X2="504" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line X1="508" X2="508" Y1="0" Y2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Line Y1="4" Y2="4" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="8" Y2="8" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="12" Y2="12" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="16" Y2="16" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="20" Y2="20" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="24" Y2="24" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="28" Y2="28" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="32" Y2="32" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="36" Y2="36" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="40" Y2="40" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="44" Y2="44" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="48" Y2="48" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="52" Y2="52" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="56" Y2="56" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="60" Y2="60" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="64" Y2="64" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="68" Y2="68" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="72" Y2="72" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="76" Y2="76" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="80" Y2="80" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="84" Y2="84" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="88" Y2="88" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="92" Y2="92" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="96" Y2="96" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="100" Y2="100" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="104" Y2="104" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="108" Y2="108" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="112" Y2="112" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="116" Y2="116" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="120" Y2="120" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="124" Y2="124" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="128" Y2="128" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="132" Y2="132" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="136" Y2="136" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="140" Y2="140" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="144" Y2="144" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="148" Y2="148" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="152" Y2="152" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="156" Y2="156" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="160" Y2="160" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="164" Y2="164" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="168" Y2="168" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="172" Y2="172" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="176" Y2="176" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="180" Y2="180" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="184" Y2="184" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="188" Y2="188" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="192" Y2="192" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="196" Y2="196" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="200" Y2="200" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="204" Y2="204" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="208" Y2="208" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="212" Y2="212" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="216" Y2="216" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="220" Y2="220" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="224" Y2="224" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="228" Y2="228" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="232" Y2="232" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="236" Y2="236" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="240" Y2="240" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="244" Y2="244" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="248" Y2="248" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="252" Y2="252" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="256" Y2="256" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="260" Y2="260" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="264" Y2="264" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="268" Y2="268" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="272" Y2="272" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="276" Y2="276" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="280" Y2="280" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="284" Y2="284" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="288" Y2="288" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="292" Y2="292" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="296" Y2="296" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="300" Y2="300" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="304" Y2="304" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="308" Y2="308" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="312" Y2="312" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="316" Y2="316" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="320" Y2="320" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="324" Y2="324" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="328" Y2="328" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="332" Y2="332" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="336" Y2="336" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="340" Y2="340" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="344" Y2="344" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="348" Y2="348" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="352" Y2="352" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="356" Y2="356" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="360" Y2="360" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="364" Y2="364" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="368" Y2="368" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="372" Y2="372" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="376" Y2="376" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="380" Y2="380" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="384" Y2="384" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="388" Y2="388" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="392" Y2="392" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="396" Y2="396" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="400" Y2="400" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="404" Y2="404" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="408" Y2="408" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="412" Y2="412" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="416" Y2="416" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="420" Y2="420" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="424" Y2="424" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="428" Y2="428" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="432" Y2="432" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="436" Y2="436" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="440" Y2="440" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="444" Y2="444" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="448" Y2="448" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="452" Y2="452" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="456" Y2="456" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="460" Y2="460" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="464" Y2="464" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="468" Y2="468" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="472" Y2="472" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="476" Y2="476" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="480" Y2="480" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="484" Y2="484" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="488" Y2="488" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="492" Y2="492" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="496" Y2="496" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="500" Y2="500" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="504" Y2="504" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Line Y1="508" Y2="508" X1="0" X2="512" StrokeThickness="1" Stroke="Green" IsHitTestVisible="False" Visibility="{Binding IsGridVisible, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
         </Border>
 
         <Grid
             Grid.Column="1"
             >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="128"/>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0">
-                <GroupBox Header="Drawing Color">
-                    <StackPanel Margin="2">
-                        <RadioButton Content="Black" IsChecked="{Binding IsBlack, UpdateSourceTrigger=PropertyChanged}"/>
-                        <RadioButton Content="Dark Gray" IsChecked="{Binding IsDarkGray, UpdateSourceTrigger=PropertyChanged}"/>
-                        <RadioButton Content="Light Gray" IsChecked="{Binding IsLightGray, UpdateSourceTrigger=PropertyChanged}"/>
-                        <RadioButton Content="White" IsChecked="{Binding IsWhite, UpdateSourceTrigger=PropertyChanged}"/>
-                    </StackPanel>
-                </GroupBox>
-                <Button 
-                    Content=" Import..." 
-                    HorizontalContentAlignment="Left" 
-                    Margin="1"
-                    Name="btnImport"
-                    Click="btnImport_Click"
-                    />
-                <Button 
-                    Content=" Save..." 
-                    HorizontalContentAlignment="Left" 
-                    Margin="1"
-                    Name="btnSave"
-                    Click="btnSave_Click"
-                    />
-                <Button 
-                    Content=" Clear" 
-                    HorizontalContentAlignment="Left" 
-                    Margin="1"
-                    Name="btnClear"
-                    Click="btnClear_Click"
-                    />
-                <CheckBox
-                    Content="Enable Grid"
-                    />
-            </StackPanel>
             <Image 
-                Grid.Row="1"
                 x:Name="imgGraphicView" 
                 Source="{Binding PreviewImage, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                 Stretch="Uniform"
+                Width="128"
+                Height="128"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
                 />
         </Grid>
     </Grid>

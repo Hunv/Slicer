@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -113,6 +114,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuttericon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\greenplus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\redcross.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folderadd.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\zoomin.ico" />
+    <Resource Include="Icons\zoomout.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\black.ico" />
+    <Resource Include="Icons\darkgray.ico" />
+    <Resource Include="Icons\lightgray.ico" />
+    <Resource Include="Icons\white.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

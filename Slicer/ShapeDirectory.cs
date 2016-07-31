@@ -13,5 +13,16 @@ namespace Slicer
         public string Path { get; set; }
         public WriteableBitmap Icon { get; set; }
         public List<ShapeDirectory> Shapes { get; set; }
+
+        public bool IsImage
+        {
+            get
+            {
+                if (Path.EndsWith("T"))
+                    return true;
+
+                return false;
+            }
+        }
     }
 }

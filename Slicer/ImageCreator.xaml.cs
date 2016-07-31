@@ -35,40 +35,25 @@ namespace Slicer
         private BitArray _ImageBits;
 
         #region Properties
+        public Visibility IsGridVisible { get; set; } = Visibility.Collapsed;
 
         public WriteableBitmap PreviewImage { get { return GetPreviewImage(); } }
 
-        public WriteableBitmap DrawImage {get; private set;}
+        public WriteableBitmap DrawImage { get; private set; }
 
-        private byte _ColorCode = 0;
         public byte ColorCode
         {
-            get
-            {
-                return _ColorCode;
-            }
-            set
-            {
-                if (value < 4)
-                {
-                    _ColorCode = value;
-                    OnPropertyChanged("ColorCode");
-                    OnPropertyChanged("IsBlack");
-                    OnPropertyChanged("IsDarkGray");
-                    OnPropertyChanged("IsLightGray");
-                    OnPropertyChanged("IsWhite");
-                }
-
-            }
+            get { return (byte)GetValue(ColorCodeProperty); }
+            set { SetValue(ColorCodeProperty, value); }
         }
-        public bool IsBlack { get { return ColorCode == 0; } set { ColorCode = 0; } }
-        public bool IsDarkGray { get { return ColorCode == 2; } set { ColorCode = 2; } }
-        public bool IsLightGray { get { return ColorCode == 1; } set { ColorCode = 1; } }
-        public bool IsWhite { get { return ColorCode == 3; } set { ColorCode = 3; } }
+
+        // Using a DependencyProperty as the backing store for ColorCode.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ColorCodeProperty =
+            DependencyProperty.Register("ColorCode", typeof(byte), typeof(ImageCreator), new PropertyMetadata((byte)0));
 
         #endregion
 
-        
+
         /// <summary>
         /// Gets the PreviewImage
         /// </summary>
@@ -167,39 +152,17 @@ namespace Slicer
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            var sfd = new SaveFileDialog();
-            if (sfd.ShowDialog() == true)
-            {
-                SaveImage(_ImageBits, sfd.FileName);
-            }
+            Save();
         }
 
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog oFD = new OpenFileDialog();
-            if (oFD.ShowDialog() == true)
-            {
-                _LastFilePath = oFD.FileName;
-                var bits = ImageHelper.LoadBits(oFD.FileName);
-                _ImageBits = bits;
-                DrawImage = ImageHelper.LoadImage(bits);
-
-                OnPropertyChanged("DrawImage");
-                OnPropertyChanged("PreviewImage");
-            }
+            Import();
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            if (_LastFilePath.Length != 0)
-            {
-                var bits = ImageHelper.LoadBits(_LastFilePath);
-                _ImageBits = bits;
-                DrawImage = ImageHelper.LoadImage(bits);
-
-                OnPropertyChanged("DrawImage");
-                OnPropertyChanged("PreviewImage");
-            }
+            Clear();
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -230,6 +193,64 @@ namespace Slicer
         }
 
         #endregion
-        
+
+        public void Import()
+        {
+            OpenFileDialog oFD = new OpenFileDialog();
+            if (oFD.ShowDialog() == true)
+            {
+                _LastFilePath = oFD.FileName;
+                var bits = ImageHelper.LoadBits(oFD.FileName);
+
+                if (bits == null)
+                {
+                    MessageBox.Show("Unsupported image format");
+                    return;
+                }
+
+                _ImageBits = bits;
+                DrawImage = ImageHelper.LoadImage(bits);
+
+                OnPropertyChanged("DrawImage");
+                OnPropertyChanged("PreviewImage");
+            }
+        }
+
+        public void Clear()
+        {
+            if (_LastFilePath.Length != 0)
+            {
+                var bits = ImageHelper.LoadBits(_LastFilePath);
+                _ImageBits = bits;
+                DrawImage = ImageHelper.LoadImage(bits);
+
+                OnPropertyChanged("DrawImage");
+                OnPropertyChanged("PreviewImage");
+            }
+        }
+
+        public void Save()
+        {
+            var sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == true)
+            {
+                SaveImage(_ImageBits, sfd.FileName);
+            }
+        }
+
+        public void SetColor(byte colorCode)
+        {
+            ColorCode = colorCode;
+        }
+
+        public void ShowGrid(bool showGrid)
+        {
+            if (showGrid)
+                IsGridVisible = Visibility.Visible;
+            else
+                IsGridVisible = Visibility.Collapsed;
+
+            OnPropertyChanged("IsGridVisible");
+        }
     }
 }
