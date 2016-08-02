@@ -11,16 +11,16 @@
         <ribbon:Ribbon DockPanel.Dock="Top">
             <ribbon:RibbonTab Header="General">
                 <ribbon:RibbonGroup>
-                    <RibbonButton Label="Open Folder" LargeImageSource="/Icons/folder.ico"/>
-                    <RibbonButton Label="Add new Shape" LargeImageSource="/Icons/greenplus.ico"/>
-                    <RibbonButton Label="Save" LargeImageSource="/Icons/save.ico" Name="btnSave" Click="btnSave_Click"/>
+                    <RibbonButton Label="Open Folder" LargeImageSource="/Icons/folder.ico" Name="btnOpenFolder" Click="btnOpenFolder_Click"/>
+                    <RibbonButton Label="Add new Shape" LargeImageSource="/Icons/greenplus.ico" Name="btnAddShape" Click="btnAddShape_Click"/>
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
-            <ribbon:RibbonTab Header="Image">
+            <ribbon:RibbonTab Header="Image" Name="ribImage" ContextualTabGroupHeader="Image" >
                 <ribbon:RibbonGroup Header="General">
                     <RibbonButton Label="Clear Image" LargeImageSource="/Icons/redcross.ico" Name="btnImageClear" Click="btnImageClear_Click"/>
                     <RibbonButton Label="Import Image" LargeImageSource="/Icons/folderadd.ico" Name="btnImageImport" Click="btnImageImport_Click"/>
                     <RibbonCheckBox Label="Enable Grid" Name="chkImageShowGrid" Click="chkImageShowGrid_Click"/>
+                    <RibbonButton Label="Save" LargeImageSource="/Icons/save.ico" Name="btnSave" Click="btnSave_Click"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="Drawing Color">
                     <RibbonRadioButton Label="Black" Name="rbImageBlack" Checked="rbImageBlack_Checked" LargeImageSource="/Icons/black.ico" IsChecked="True"/>
@@ -29,13 +29,22 @@
                     <RibbonRadioButton Label="White" Name="rbImageWhite" Checked="rbImageWhite_Checked" LargeImageSource="/Icons/white.ico"/>
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
-            <ribbon:RibbonTab Header="Shape">
-                <ribbon:RibbonGroup>
-                    <RibbonButton Label="Zoom In" LargeImageSource="/Icons/zoomin.ico"/>
-                    <RibbonButton Label="Zoom Out" LargeImageSource="/Icons/zoomout.ico"/>
-                    <RibbonButton Label="Load SVG" LargeImageSource="/Icons/folderadd.ico"/>
+            <ribbon:RibbonTab Header="Shape" Name="ribShape"  ContextualTabGroupHeader="Shape">
+                <ribbon:RibbonGroup Header="File">
+                    <RibbonButton Label="Load SVG" LargeImageSource="/Icons/folderadd.ico" Name="btnShapeLoadSvg" Click="btnShapeLoadSvg_Click"/>
+                    <RibbonButton Label="Load Background" LargeImageSource="/Icons/screen.ico" Name="btnShapeLoadBackground" Click="btnShapeLoadBackground_Click"/>
+                    <RibbonButton Label="Save" LargeImageSource="/Icons/save.ico" Name="btnShapeSave" Click="btnShapeSave_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="View">
+                    <RibbonButton Label="Zoom In" LargeImageSource="/Icons/zoomin.ico" Name="btnShapeZoomIn" Click="btnShapeZoomIn_Click"/>
+                    <RibbonButton Label="Zoom Out" LargeImageSource="/Icons/zoomout.ico" Name="btnShapeZoomOut" Click="btnShapeZoomOut_Click"/>
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
+            
+            <ribbon:Ribbon.ContextualTabGroups>
+                <RibbonContextualTabGroup Header="Image" Visibility="Visible" Background="Green" Name="rgImage"/>
+                <RibbonContextualTabGroup Header="Shape" Visibility="Visible" Background="Blue" Name="rgShape"/>
+            </ribbon:Ribbon.ContextualTabGroups>
         </ribbon:Ribbon>
         <Grid>
             <Grid.ColumnDefinitions>

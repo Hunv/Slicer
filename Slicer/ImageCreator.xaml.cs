@@ -196,24 +196,34 @@ namespace Slicer
 
         public void Import()
         {
-            OpenFileDialog oFD = new OpenFileDialog();
-            if (oFD.ShowDialog() == true)
+            Import("");
+        }
+
+        public void Import(string path)
+        {
+            if (path == "")
             {
-                _LastFilePath = oFD.FileName;
-                var bits = ImageHelper.LoadBits(oFD.FileName);
-
-                if (bits == null)
-                {
-                    MessageBox.Show("Unsupported image format");
-                    return;
+                OpenFileDialog oFD = new OpenFileDialog();
+                if (oFD.ShowDialog() == true)
+                {                    
+                    path = oFD.FileName;
                 }
-
-                _ImageBits = bits;
-                DrawImage = ImageHelper.LoadImage(bits);
-
-                OnPropertyChanged("DrawImage");
-                OnPropertyChanged("PreviewImage");
             }
+
+            _LastFilePath = path;
+            var bits = ImageHelper.LoadBits(path);
+
+            if (bits == null)
+            {
+                MessageBox.Show("Unsupported image format");
+                return;
+            }
+
+            _ImageBits = bits;
+            DrawImage = ImageHelper.LoadImage(bits);
+
+            OnPropertyChanged("DrawImage");
+            OnPropertyChanged("PreviewImage");
         }
 
         public void Clear()

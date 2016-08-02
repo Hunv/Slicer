@@ -27,6 +27,7 @@ namespace Slicer
                 case ".mat":
                 case ".mot":
                 case ".sot":
+                case ".sat":
                     //Direct import
                     var imageBytes = System.IO.File.ReadAllBytes(path);
                     var imageBits = OrderBits(new BitArray(imageBytes));
