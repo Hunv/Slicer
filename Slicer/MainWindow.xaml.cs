@@ -31,6 +31,8 @@ namespace Slicer
 
 
         public List<ShapeDirectory> ShapeList { get; set; }
+        public string basePath = "";
+        public string selectedShapePath = "";
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -93,7 +95,7 @@ namespace Slicer
                 return;
             }
 
-
+            basePath = name;
             ShapeList = new List<ShapeDirectory>();
 
             //Load the Image and Cutter-Icons
@@ -226,6 +228,7 @@ namespace Slicer
                 ribImage.IsSelected = true;
 
                 imgCreator.Import(((ShapeDirectory)e.AddedItems[0]).Path);
+                selectedShapePath = "";
             }
             else
             {
@@ -233,6 +236,8 @@ namespace Slicer
                 ribShape.Visibility = Visibility.Visible;
                 ribImage.Visibility = Visibility.Collapsed;
                 ribShape.IsSelected = true;
+
+                selectedShapePath = ((ShapeDirectory)e.AddedItems[0]).Path;
             }
         }
         
@@ -285,7 +290,7 @@ namespace Slicer
 
         private void btnShapeSave_Click(object sender, RoutedEventArgs e)
         {
-            shaCreator.GenerateCutterCode();
+            shaCreator.GenerateCutterCode(selectedShapePath);
         }
 
         private void btnShapeLoadSvg_Click(object sender, RoutedEventArgs e)
@@ -315,7 +320,81 @@ namespace Slicer
 
         private void btnAddShape_Click(object sender, RoutedEventArgs e)
         {
+            //Open Folder of not already done
+            if (ShapeList == null || ShapeList.Count == 0)
+            {
+                OpenFolder();
+            }
 
+            //If there is a Shapelist, continue
+            if (ShapeList != null && ShapeList.Count > 0 && basePath.Length != 0)
+            {
+                var slicerPath = "";
+
+                //Check each folder, if it is the Custom Shape directory
+                var mainDirectories = System.IO.Directory.GetDirectories(basePath + "\\11");
+                for (var i = mainDirectories.Length - 1; i >= 0; i--)
+                {
+                    if (System.IO.Directory.GetFiles(mainDirectories[i]).Contains(mainDirectories + "\\slicer.txt"))
+                    {
+                        slicerPath = mainDirectories[i];
+                        break;
+                    }
+                }
+
+                //Create custom path if not exists
+                if (slicerPath == "")
+                {
+                    var newFolderNumber= System.IO.Directory.GetDirectories(basePath + "\\11").Length + 11;
+                    System.IO.Directory.CreateDirectory(basePath + "\\11\\11-" + newFolderNumber);
+                    var sWa = System.IO.File.CreateText(basePath + "\\11\\11-" + newFolderNumber + "\\slicer.txt");
+                    sWa.Write("This is a file that is for recognition of custom shapes. Don't delete it until you like to create a new folder for custom shapes.");
+                    sWa.Close();
+                    sWa = new System.IO.StreamWriter(basePath + "\\11\\fdata.txt");
+                    sWa.WriteLine(System.IO.Directory.GetDirectories(basePath + "\\11").Length);
+                    for (var i = 0; i < System.IO.Directory.GetDirectories(basePath + "\\11").Length; i++)
+                    {
+                        sWa.WriteLine("11-" + (i + 11));
+                    }
+                    sWa.Close();
+
+                    //System.IO.File.Create(basePath + "\\11\\11-" + newFolderNumber + ".DAT");
+                    var sWas = new System.IO.FileStream(basePath + "\\11\\11-" + newFolderNumber + ".DAT", System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write);
+                    for (var i = 0; i < 200; i++)
+                        sWas.Write(new byte[] { 0xFF }, 0, 1);
+                    sWas.Close();
+
+                    slicerPath = basePath + "\\11\\11-" + newFolderNumber;
+                }
+
+                //Create new Shape directory and shape base
+                var customShapeCount = System.IO.Directory.GetDirectories(slicerPath).Length;
+                System.IO.Directory.CreateDirectory(slicerPath + "\\" + slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11));
+
+                System.IO.StreamWriter sW = new System.IO.StreamWriter(slicerPath + "\\fdata.txt");
+                sW.WriteLine(System.IO.Directory.GetDirectories(slicerPath).Length);
+                for (var i = 0; i < System.IO.Directory.GetDirectories(slicerPath).Length; i++)
+                {
+                    sW.WriteLine(slicerPath.Split('\\').Last() + "-" + (i + 11));
+                }
+                sW.Close();
+                //System.IO.File.Create(slicerPath + "\\" + slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11) + ".DAT");
+                var sWs = new System.IO.FileStream(slicerPath + "\\" + slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11) + ".DAT", System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write);
+                for (var i = 0; i < 200; i++)
+                    sWs.Write(new byte[] { 0xFF }, 0, 1);
+                sWs.Close();
+
+
+                sW = new System.IO.StreamWriter(slicerPath + "\\" + slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11) + "\\fdata.txt");
+                sW.WriteLine("1");
+                sW.WriteLine(slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11));
+                sW.Close();
+                //System.IO.File.Create(slicerPath + "\\" + slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11) + "\\" + slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11) + ".dn8");
+                sWs = new System.IO.FileStream(slicerPath + "\\" + slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11) + "\\" + slicerPath.Split('\\').Last() + "-" + (customShapeCount + 11) + ".dn8", System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write);                
+                sWs.Write(new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0 }, 0, 6);
+                sWs.Close();
+
+            }
         }
     }
 }

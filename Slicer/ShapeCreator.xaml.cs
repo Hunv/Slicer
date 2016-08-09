@@ -148,7 +148,7 @@ namespace Slicer
         /// <summary>
         /// Creates the Bytes that describes the shape (="CutterCode")
         /// </summary>
-        public void GenerateCutterCode()
+        public void GenerateCutterCode(string path)
         {
             List<byte> cutterCommands = new List<byte>();
 
@@ -209,21 +209,27 @@ namespace Slicer
             cutterCommands.Add((byte)CutterCode.Finish);
 
             //Save the bytes to file
-            SaveCutterCode(cutterCommands.ToArray());
+            SaveCutterCode(cutterCommands.ToArray(), path);
         }
 
         /// <summary>
         /// Saves the given ByteArray to a file
         /// </summary>
         /// <param name="cutterCode"></param>
-        private void SaveCutterCode(byte[] cutterCode)
+        private void SaveCutterCode(byte[] cutterCode, string path)
         {
             var sFD = new SaveFileDialog();
+            if (path != "")
+            {
+                sFD.InitialDirectory = Path.GetDirectoryName(path);
+                sFD.FileName = path.Split('\\').Last();
+            }
+
             if (sFD.ShowDialog() == true)
             {
                 try
                 {
-                    var sW = new System.IO.FileStream(sFD.FileName, System.IO.FileMode.Create);
+                    var sW = new FileStream(sFD.FileName, FileMode.Create);
                     sW.Write(cutterCode, 0, cutterCode.Length);
                     sW.Close();
 
@@ -286,7 +292,7 @@ namespace Slicer
             {
                 var factor = lengthSteps < 0 ? -1 : 1;
                 cutCodeBytes.AddRange(GetDeltaSlideBytes(255 * factor));
-                lengthSteps -= 255;
+                lengthSteps -= (255 * factor);
             }
 
             var cmdByte = (lengthSteps > 0 ? (byte)CutterCode.SledgeOut : (byte)CutterCode.SledgeIn);
@@ -363,7 +369,7 @@ namespace Slicer
             CutterPath.Add(new List<CutterPathItem>());
 
             //Remove the letters and get the coordinates 
-            svgPathString = svgPathString.Replace('C', ' ').TrimStart('M');
+            svgPathString = svgPathString.ToLower().Replace('c', ' ').Replace('m',' ').Replace('z', ' ').Replace('l', ' ').Trim();
             var svgPathStringArray = svgPathString.Split(' ');
 
             //Remove the Period
@@ -537,12 +543,26 @@ namespace Slicer
 
                 var gNode = xDoc.DocumentElement;
 
-                foreach (XmlNode aPath in gNode["g"].ChildNodes)
+                if (gNode == null || gNode["g"] == null)
                 {
-                    if (aPath.Name.ToLower() == "path" && aPath.Attributes["d"] != null)
+                    foreach (XmlNode aPath in gNode.ChildNodes)
                     {
-                        //Load the path and add it to Image Path
-                        loadSvgPath(aPath.Attributes["d"].InnerText);
+                        if (aPath.Name.ToLower() == "path" && aPath.Attributes["d"] != null)
+                        {
+                            //Load the path and add it to Image Path
+                            loadSvgPath(aPath.Attributes["d"].InnerText);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (XmlNode aPath in gNode["g"].ChildNodes)
+                    {
+                        if (aPath.Name.ToLower() == "path" && aPath.Attributes["d"] != null)
+                        {
+                            //Load the path and add it to Image Path
+                            loadSvgPath(aPath.Attributes["d"].InnerText);
+                        }
                     }
                 }
             }
