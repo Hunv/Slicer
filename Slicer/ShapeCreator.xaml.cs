@@ -152,6 +152,9 @@ namespace Slicer
         {
             List<byte> cutterCommands = new List<byte>();
 
+            //Sort the Array so the smallest path is cutted first
+            Array.Sort(CutterPath.ToArray(), (x, y) => x.Count.CompareTo(y.Count));
+
             //Add the Header   
             cutterCommands.Add(0x48); //Header
             cutterCommands.Add(0x75); //Header
@@ -365,38 +368,45 @@ namespace Slicer
         /// <param name="overwrite"></param>
         private void loadSvgPath(string svgPathString)
         {
-            //Add a new Path
-            CutterPath.Add(new List<CutterPathItem>());
-
-            //Remove the letters and get the coordinates 
-            svgPathString = svgPathString.ToLower().Replace('c', ' ').Replace('m',' ').Replace('z', ' ').Replace('l', ' ').Trim();
-            var svgPathStringArray = svgPathString.Split(' ');
-
-            //Remove the Period
-            for (var i = 0; i < svgPathStringArray.Length; i++)
+            try
             {
-                svgPathStringArray[i] = svgPathStringArray[i].Split('.')[0];
-            }
+                //Add a new Path
+                CutterPath.Add(new List<CutterPathItem>());
 
-            var svgPathPoints = new  List<Point>();
+                //Remove the letters and get the coordinates 
+                svgPathString = svgPathString.ToLower().Replace('c', ' ').Replace('m', ' ').Replace('z', ' ').Replace('l', ' ').Trim();
+                var svgPathStringArray = svgPathString.Split(' ');
 
-            //Convert to Points for Grid
-            for (var i = 0; i < svgPathStringArray.Length; i += 2)
-            {
-                svgPathPoints.Add(new Point(Convert.ToInt32(svgPathStringArray[i]) + 255, Convert.ToInt32(svgPathStringArray[i + 1]) + 255));
-            }
-
-            //Remove Points that are existing twice
-            for (var i = 0; i < svgPathPoints.Count - 1; i++)
-            {
-                if (svgPathPoints[i].X == svgPathPoints[i + 1].X && svgPathPoints[i].Y == svgPathPoints[i + 1].Y)
+                //Remove the Period
+                for (var i = 0; i < svgPathStringArray.Length; i++)
                 {
-                    svgPathPoints.RemoveAt(i + 1);
-                    i--;
+                    svgPathStringArray[i] = svgPathStringArray[i].Split('.')[0];
                 }
-            }
 
-            setCutterVisualizerPath(svgPathPoints);
+                var svgPathPoints = new List<Point>();
+
+                //Convert to Points for Grid
+                for (var i = 0; i < svgPathStringArray.Length; i += 2)
+                {
+                    svgPathPoints.Add(new Point(Convert.ToInt32(svgPathStringArray[i]) + 255, Convert.ToInt32(svgPathStringArray[i + 1]) + 255));
+                }
+
+                //Remove Points that are existing twice
+                for (var i = 0; i < svgPathPoints.Count - 1; i++)
+                {
+                    if (svgPathPoints[i].X == svgPathPoints[i + 1].X && svgPathPoints[i].Y == svgPathPoints[i + 1].Y)
+                    {
+                        svgPathPoints.RemoveAt(i + 1);
+                        i--;
+                    }
+                }
+
+                setCutterVisualizerPath(svgPathPoints);
+            }
+            catch (Exception ea)
+            {
+                MessageBox.Show("SVG File has not the correct format. Consult the Readme to get more information.");
+            }
         }
 
         /// <summary>
